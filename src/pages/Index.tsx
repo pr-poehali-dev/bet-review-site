@@ -154,7 +154,7 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
+    <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-12 max-w-6xl">
         
         <header className="text-center mb-16 animate-fade-in">
@@ -181,7 +181,7 @@ const Index = () => {
             {bookmakers.map((bk, index) => (
               <Card 
                 key={bk.id} 
-                className="hover:shadow-xl transition-all duration-300 animate-fade-in border-2 hover:scale-[1.02] relative overflow-hidden"
+                className="hover:shadow-xl hover:shadow-primary/20 transition-all duration-300 animate-fade-in border-2 border-border hover:border-primary/50 hover:scale-[1.02] relative overflow-hidden bg-card"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <div className="absolute top-4 left-4 text-4xl">{bk.emoji}</div>
@@ -229,7 +229,7 @@ const Index = () => {
             {userReviews.map((review, index) => (
               <Card 
                 key={review.id}
-                className="animate-fade-in hover:shadow-md transition-shadow"
+                className="animate-fade-in hover:shadow-md hover:shadow-primary/10 transition-shadow bg-card border-border"
                 style={{ animationDelay: `${index * 80}ms` }}
               >
                 <CardHeader>
@@ -280,7 +280,7 @@ const Index = () => {
               <AccordionItem 
                 key={index} 
                 value={`item-${index}`}
-                className="border rounded-lg px-6 bg-white shadow-sm"
+                className="border border-border rounded-lg px-6 bg-card shadow-sm"
               >
                 <AccordionTrigger className="text-lg font-semibold hover:text-primary">
                   {faq.question}

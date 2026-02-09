@@ -13,7 +13,8 @@ const Index = () => {
       rating: 9.5,
       bonus: "Фрибет до 15 000 ₽",
       features: ["Фрибет без депозита", "Live-ставки", "Лучшая линия"],
-      reviews: 2456
+      reviews: 2456,
+      url: "https://fonbet.ru"
     },
     {
       id: 2,
@@ -22,7 +23,8 @@ const Index = () => {
       rating: 9.2,
       bonus: "Фрибет до 25 000 ₽",
       features: ["100% к первому депозиту", "Широкая роспись", "Статистика матчей"],
-      reviews: 1987
+      reviews: 1987,
+      url: "https://marathonbet.ru"
     },
     {
       id: 3,
@@ -31,7 +33,8 @@ const Index = () => {
       rating: 9.0,
       bonus: "Фрибет до 10 000 ₽",
       features: ["5 фрибетов новичкам", "Кешбэк до 20%", "Бонусы за киберспорт"],
-      reviews: 1654
+      reviews: 1654,
+      url: "https://betboom.ru"
     },
     {
       id: 4,
@@ -40,7 +43,8 @@ const Index = () => {
       rating: 8.8,
       bonus: "Фрибет 3 000 ₽",
       features: ["Фрибет за регистрацию", "Программа лояльности", "Быстрый вывод"],
-      reviews: 1342
+      reviews: 1342,
+      url: "https://winline.ru"
     },
     {
       id: 5,
@@ -49,7 +53,8 @@ const Index = () => {
       rating: 8.6,
       bonus: "Фрибет до 3 000 ₽",
       features: ["Страховка первой ставки", "Надежность", "Промокоды"],
-      reviews: 1198
+      reviews: 1198,
+      url: "https://betcity.ru"
     },
     {
       id: 6,
@@ -58,7 +63,8 @@ const Index = () => {
       rating: 8.5,
       bonus: "Фрибет до 20 000 ₽",
       features: ["Бонус на первый депозит", "Простой интерфейс", "Поддержка 24/7"],
-      reviews: 956
+      reviews: 956,
+      url: "https://leon.ru"
     }
   ];
 
@@ -208,9 +214,15 @@ const Index = () => {
                       ))}
                     </div>
                     
-                    <Button className="w-full gap-2 py-6 text-base font-semibold" size="lg">
-                      ЗАБРАТЬ ФРИБЕТ
-                      <Icon name="ArrowRight" size={18} />
+                    <Button 
+                      className="w-full gap-2 py-6 text-base font-semibold" 
+                      size="lg"
+                      asChild
+                    >
+                      <a href={bk.url} target="_blank" rel="noopener noreferrer">
+                        ЗАБРАТЬ ФРИБЕТ
+                        <Icon name="ArrowRight" size={18} />
+                      </a>
                     </Button>
                   </div>
                 </CardContent>

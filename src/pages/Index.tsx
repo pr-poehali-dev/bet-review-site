@@ -9,49 +9,55 @@ const Index = () => {
     {
       id: 1,
       name: "Fonbet",
-      rating: 4.8,
-      bonus: "Фрибет 3000₽ новым игрокам",
-      features: ["Легальная БК", "Быстрые выплаты", "Мобильное приложение"],
+      emoji: "⚡",
+      rating: 9.5,
+      bonus: "Фрибет до 15 000 ₽",
+      features: ["Фрибет без депозита", "Live-ставки", "Лучшая линия"],
       reviews: 2456
     },
     {
       id: 2,
       name: "Марафонбет",
-      rating: 4.7,
-      bonus: "Фрибет 5000₽ при регистрации",
-      features: ["Высокие коэффициенты", "Широкая линия", "Live-ставки"],
+      emoji: "🎯",
+      rating: 9.2,
+      bonus: "Фрибет до 25 000 ₽",
+      features: ["100% к первому депозиту", "Широкая роспись", "Статистика матчей"],
       reviews: 1987
     },
     {
       id: 3,
-      name: "BetBoom",
-      rating: 4.6,
-      bonus: "Фрибет 2000₽ + кешбэк 10%",
-      features: ["Российская лицензия", "Промокоды", "Акции каждую неделю"],
+      name: "Betboom",
+      emoji: "🚀",
+      rating: 9.0,
+      bonus: "Фрибет до 10 000 ₽",
+      features: ["5 фрибетов новичкам", "Кешбэк до 20%", "Бонусы за киберспорт"],
       reviews: 1654
     },
     {
       id: 4,
       name: "Winline",
-      rating: 4.5,
-      bonus: "Фрибет 1500₽ за первую ставку",
-      features: ["Быстрая регистрация", "Удобный интерфейс", "Поддержка 24/7"],
+      emoji: "🏆",
+      rating: 8.8,
+      bonus: "Фрибет 3 000 ₽",
+      features: ["Фрибет за регистрацию", "Программа лояльности", "Быстрый вывод"],
       reviews: 1342
     },
     {
       id: 5,
       name: "Betcity",
-      rating: 4.4,
-      bonus: "Фрибет 2500₽ новичкам",
-      features: ["Легальная БК", "Большой выбор спорта", "Программа лояльности"],
+      emoji: "💎",
+      rating: 8.6,
+      bonus: "Фрибет до 3 000 ₽",
+      features: ["Страховка первой ставки", "Надежность", "Промокоды"],
       reviews: 1198
     },
     {
       id: 6,
       name: "Leon",
-      rating: 4.3,
-      bonus: "Фрибет 1000₽ на первый депозит",
-      features: ["Простая регистрация", "Стримы матчей", "Cashout"],
+      emoji: "⭐",
+      rating: 8.5,
+      bonus: "Фрибет до 20 000 ₽",
+      features: ["Бонус на первый депозит", "Простой интерфейс", "Поддержка 24/7"],
       reviews: 956
     }
   ];
@@ -175,42 +181,37 @@ const Index = () => {
             {bookmakers.map((bk, index) => (
               <Card 
                 key={bk.id} 
-                className="hover:shadow-lg transition-shadow duration-300 animate-fade-in border-2"
+                className="hover:shadow-xl transition-all duration-300 animate-fade-in border-2 hover:scale-[1.02] relative overflow-hidden"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
-                <CardHeader>
-                  <div className="flex items-start justify-between mb-2">
-                    <CardTitle className="text-2xl">{bk.name}</CardTitle>
-                    <Badge variant="secondary" className="text-base px-3 py-1">
-                      <Icon name="Star" size={14} className="mr-1 fill-amber-400 text-amber-400" />
+                <div className="absolute top-4 left-4 text-4xl">{bk.emoji}</div>
+                <CardHeader className="pt-16">
+                  <div className="flex items-start justify-between mb-3">
+                    <CardTitle className="text-2xl font-bold">{bk.name}</CardTitle>
+                    <Badge className="text-lg px-3 py-1.5 bg-amber-400 text-amber-950 font-bold">
                       {bk.rating}
                     </Badge>
                   </div>
-                  <CardDescription className="text-base font-medium text-primary">
+                  <CardDescription className="text-lg font-bold text-primary">
                     {bk.bonus}
                   </CardDescription>
                 </CardHeader>
                 
                 <CardContent>
-                  <div className="space-y-4">
-                    <div className="flex flex-wrap gap-2">
+                  <div className="space-y-5">
+                    <div className="space-y-2">
                       {bk.features.map((feature, idx) => (
-                        <Badge key={idx} variant="outline" className="text-sm">
-                          {feature}
-                        </Badge>
+                        <div key={idx} className="flex items-center gap-2 text-sm text-muted-foreground">
+                          <Icon name="Check" size={16} className="text-primary" />
+                          <span>{feature}</span>
+                        </div>
                       ))}
                     </div>
                     
-                    <div className="flex items-center justify-between pt-2">
-                      <span className="text-sm text-muted-foreground flex items-center gap-1">
-                        <Icon name="MessageSquare" size={16} />
-                        {bk.reviews.toLocaleString('ru-RU')} отзывов
-                      </span>
-                      <Button className="gap-2">
-                        Перейти на сайт
-                        <Icon name="ExternalLink" size={16} />
-                      </Button>
-                    </div>
+                    <Button className="w-full gap-2 py-6 text-base font-semibold" size="lg">
+                      ЗАБРАТЬ ФРИБЕТ
+                      <Icon name="ArrowRight" size={18} />
+                    </Button>
                   </div>
                 </CardContent>
               </Card>
